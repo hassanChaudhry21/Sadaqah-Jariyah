@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+          color: black;
+          text-align: center;
+          border: 6px solid gold;
+          padding: 20px;
+          margin: 0;
+          background: url(test5.jpeg) center center/cover no-repeat fixed;
+          font-size: 18px;
+        }
+        
+        audio {
+          text-align: center;
+          display: block;
+          margin: 0 auto;
+          cursor: pointer;
+          transition: transform 0.3s ease-in-out;
+          max-width: 100%;
+        }
+        
+        /* Media Query */
+        @media only screen and (max-width: 600px) {
+          body {
+            padding: 10px;
+          }
+          audio {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            margin-top: 10px;
+          }
+        }
+       
+        /* Hover effects */
+        audio:hover{
+          transform: scale(1.2);
+        }
+        
+        /* CSS animations */
+        @keyframes slide-in {
+          from {
+            transform: translateX(-100%);
+          }
+          to {
+            transform: translateX(0);
+          }
+        }
+       
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+       
+        /* Apply animations */
+        body {
+          animation: slide-in 0.5s ease-in-out;
+        }
+       
+        audio {
+          animation: fade-in 1s ease-in-out;
+        }
+      </style>
+      
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <link rel="stylesheet" href="style.css"> -->
+<title>Document</title>
+
+</head>
+<body>
+  <audio class="surahfatiha" src="surah1.mp3" controls ></audio>
+    <h1 onclick="speakText('بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ')">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِي </h1>
+    <h1 onclick="speakText('الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ')">ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَـٰلَمِينَ ٢</h1>
+    <h1 onclick="speakText('الرَّحْمَٰنِ الرَّحِيمِ')">ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ ٣</h1>
+    <h1 onclick="speakText('مَالِكِ يَوْمِ الدِّينِ')">مَـٰلِكِ يَوْمِ ٱلدِّينِ ٤</h1>
+    <h1 onclick="speakText('إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ')">إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ ٥</h1>
+    <h1 onclick="speakText('اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ')">ٱهْدِنَا ٱلصِّرَٰطَ ٱلْمُسْتَقِيمَ ٦</h1>
+    <h1 onclick="speakText('صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ')">صِرَٰطَ ٱلَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ ٱلْمَغْضُوبِ عَلَيْهِمْ وَلَا ٱلضَّآلِّينَ ٧</h1>
+    <script>
+        function speakText(text) {
+          const synth = window.speechSynthesis;
+          const utterance = new SpeechSynthesisUtterance(text);
+          synth.speak(utterance);
+        }
+      </script>
+    </body>
+  </html>
